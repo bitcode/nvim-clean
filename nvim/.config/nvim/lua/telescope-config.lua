@@ -1,6 +1,5 @@
 local actions = require('telescope.actions')
-vim.cmd("command! MetaCodeAITelescope lua require('telescope').extensions.metacode_ai.metacode_ai_picker({finders = require('telescope.finders')})")
-vim.api.nvim_set_keymap('n', '<leader>m', ':MetaCodeAITelescope<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>m', "<cmd>lua require('telescope').extensions.metacode_ai.metacode_ai_picker()<CR>", {noremap = true, silent = true})
 
 require('telescope').setup {
   defaults = {
@@ -93,4 +92,3 @@ require('telescope').setup {
 }
 -- Add key mapping for <leader>ff to open Telescope file picker
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true, silent = true})
-
